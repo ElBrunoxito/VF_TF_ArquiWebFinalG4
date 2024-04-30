@@ -20,4 +20,5 @@ public class UsuarioDto {
     private String direccionUsuario;
     private String telefonoUsuario;
     private Integer ciudadId;
+
 }
