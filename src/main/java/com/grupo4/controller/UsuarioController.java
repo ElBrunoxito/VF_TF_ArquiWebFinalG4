@@ -23,10 +23,8 @@ public class UsuarioController {
 
     @PostMapping("/login")
     public String login(@RequestBody LoginDto loginRequestDto) {
-        // Llamar al servicio de autenticación para verificar las credenciales del usuario
         boolean autenticado = usuarioService.autenticarUsuario(loginRequestDto);
 
-        // Devolver una respuesta basada en el resultado de la autenticación
         if (autenticado) {
             return "Inicio de sesión exitoso";
         } else {
