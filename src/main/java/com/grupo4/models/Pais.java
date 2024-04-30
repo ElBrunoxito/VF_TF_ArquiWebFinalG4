@@ -16,7 +16,7 @@ public class Pais {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombrePais;
-   /* @OneToMany(fetch = FetchType.LAZY,mappedBy = "pais",cascade = CascadeType.ALL)
-    List<Ciudad> ciudad ;*/
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "pais",cascade = CascadeType.ALL)
+    List<Ciudad> ciudad ;
 
 }
