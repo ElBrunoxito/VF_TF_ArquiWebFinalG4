@@ -5,10 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CiudadDto {
+@AllArgsConstructor
+public class TipoReservaDto {
     private Integer id;
-    private String nombreCiudad;
-    private Integer paisId;
+    private String nombre;
 }

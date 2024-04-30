@@ -14,11 +14,10 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Reserva {
+public class Transaccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String descripcion;
-    private Date fechaCreacion;
-    private Double Monto;
+    private Date fecha;
+    private Double monto;
 }

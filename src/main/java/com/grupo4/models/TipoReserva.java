@@ -8,17 +8,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Reserva {
+public class TipoReserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String descripcion;
-    private Date fechaCreacion;
-    private Double Monto;
+    private String nombre;
 }

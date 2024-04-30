@@ -4,11 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CiudadDto {
+@AllArgsConstructor
+public class TransaccionDto {
     private Integer id;
-    private String nombreCiudad;
-    private Integer paisId;
+    private Date fecha;
+    private Double monto;
 }
