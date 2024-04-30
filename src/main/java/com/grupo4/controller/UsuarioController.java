@@ -1,4 +1,4 @@
 package com.grupo4.controller;
 
-public class Usuario {
+public class UsuarioController {
 }

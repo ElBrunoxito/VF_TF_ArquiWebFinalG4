@@ -1,4 +1,4 @@
-package com.grupo4.controller;
+package com.grupo4.models;
 
 public class TarjetaDebito {
 }
