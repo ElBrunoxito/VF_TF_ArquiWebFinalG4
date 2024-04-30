@@ -14,4 +14,5 @@ public class ReservaDto {
     private String descripcion;
     private Date fechaCreacion;
     private Double Monto;
+    private Integer TipoReservaId;
 }
