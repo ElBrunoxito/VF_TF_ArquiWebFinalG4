@@ -32,7 +32,7 @@ public class Usuario {
     @JoinColumn(name = "ciudad_id")
     Ciudad ciudad;
 
-   /* public Usuario(String nombre, String apellido, String email, String usuario, String contrasena, Date fechaRegistro, String direccionUsuario, String telefonoUsuario) {
+    public Usuario(String nombre, String apellido, String email, String usuario, String contrasena, Date fechaRegistro, String direccionUsuario, String telefonoUsuario, Ciudad ciudad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -41,6 +41,6 @@ public class Usuario {
         this.fechaRegistro = fechaRegistro;
         this.direccionUsuario = direccionUsuario;
         this.telefonoUsuario = telefonoUsuario;
-    }*/
-
+        this.ciudad = ciudad;
+    }
 }

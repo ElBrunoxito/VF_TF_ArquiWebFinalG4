@@ -15,7 +15,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
         this.ciudadRepository = ciudadRepository;
     }
-    public Usuario Add(UsuarioDto usuarioDto){
+    /*public Usuario Add(UsuarioDto usuarioDto){
         Usuario usuario = new Usuario();
         Ciudad ciudad = new Ciudad ();
         usuario.setNombre(usuarioDto.getNombre());
@@ -26,16 +26,17 @@ public class UsuarioService {
         usuario.setFechaRegistro(usuarioDto.getFechaRegistro());
         usuario.setDireccionUsuario(usuarioDto.getDireccionUsuario());
         usuario.setTelefonoUsuario(usuarioDto.getTelefonoUsuario());
-        usuario.setSaldo(usuarioDto.getSaldo());
+        //usuario.setSaldo(usuarioDto.getSaldo());
         ciudad.setId(usuarioDto.getCiudadId());
         usuario.setCiudad(ciudad);
         return usuarioRepository.save(usuario);
-    }
-  /*public Usuario Add(UsuarioDto usuarioDto){
-        Usuario usuario = new Usuario(usuarioDto.getNombre(), usuarioDto.getApellido(),
-                usuarioDto.getEmail(), usuarioDto.getUsuario(), usuarioDto.getContrasena(),
-                usuarioDto.getFechaRegistro(), usuarioDto.getDireccionUsuario(),usuarioDto.getTelefonoUsuario());
-        return usuarioRepository.save(usuario);
     }*/
-
+  public Usuario Add(UsuarioDto usuarioDto){
+       Ciudad ciudad = new Ciudad();
+       ciudad.setId(usuarioDto.getCiudadId());
+       Usuario usuario = new Usuario(usuarioDto.getNombre(), usuarioDto.getApellido(),
+                usuarioDto.getEmail(), usuarioDto.getUsuario(), usuarioDto.getContrasena(),
+                usuarioDto.getFechaRegistro(), usuarioDto.getDireccionUsuario(),usuarioDto.getTelefonoUsuario(), ciudad);
+        return usuarioRepository.save(usuario);
+    }
 }

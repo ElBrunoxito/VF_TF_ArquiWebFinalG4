@@ -19,6 +19,5 @@ public class UsuarioDto {
     private Date fechaRegistro = new Date();
     private String direccionUsuario;
     private String telefonoUsuario;
-    private Double saldo;
     private Integer ciudadId;
 }
