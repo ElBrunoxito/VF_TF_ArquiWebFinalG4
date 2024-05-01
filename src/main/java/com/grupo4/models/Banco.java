@@ -20,8 +20,8 @@ public class Banco {
     private String telefonoBanco;
    /* @OneToMany(fetch = FetchType.LAZY, mappedBy = "banco", cascade = CascadeType.ALL)
     List<TarjetaDebito> tarjetas;
-    //relacion ciudad-banco
-   @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    //relacion ciudad-banco*/
+   @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ciudad_id")
-    private Ciudad ciudad;*/
+    private Ciudad ciudad;
 }

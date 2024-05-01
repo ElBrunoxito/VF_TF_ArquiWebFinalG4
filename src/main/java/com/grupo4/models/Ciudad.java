@@ -21,10 +21,9 @@ public class Ciudad {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pais_id")
     Pais pais;
-/*
+
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "ciudad",cascade = CascadeType.ALL)
     private List<Banco> bancos;
-*/
 
     public Ciudad(String nombreCiudad, Pais pais) {
         this.nombreCiudad = nombreCiudad;
