@@ -24,4 +24,11 @@ public class Banco {
    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ciudad_id")
     private Ciudad ciudad;
+
+    public Banco(String nombreBanco, String direccionBanco, String telefonoBanco, Ciudad ciudad) {
+        this.nombreBanco = nombreBanco;
+        this.direccionBanco = direccionBanco;
+        this.telefonoBanco = telefonoBanco;
+        this.ciudad = ciudad;
+    }
 }

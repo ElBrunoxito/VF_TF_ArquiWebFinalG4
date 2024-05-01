@@ -12,5 +12,7 @@ public class BancoDto {
     private String nombreBanco;
     private String direccionBanco;
     private String telefonoBanco;
-    private Integer bancoId;
+    private Integer ciudadId;
+
+
 }
