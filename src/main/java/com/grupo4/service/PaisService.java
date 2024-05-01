@@ -1,12 +1,9 @@
 package com.grupo4.service;
 
 import com.grupo4.dto.PaisDto;
-import com.grupo4.dto.TipoReservaDto;
 import com.grupo4.models.Pais;
-import com.grupo4.models.TipoReserva;
 import com.grupo4.repository.PaisRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,12 +21,8 @@ public class PaisService {
         return paisRepository.save(pais);
     }
 
-    /*public List<Pais> getAll() {
-        return paisRepository.findAll();
-    }*/
-
-    public List<PaisDto> getAll() {
-        List<Pais> lista = paisRepository.findAll();
+    public java.util.List<PaisDto> getAll() {
+        java.util.List<Pais> lista = paisRepository.findAll();
         List<PaisDto> listaDto = new ArrayList<>();
         PaisDto item;
         for(Pais p: lista){
