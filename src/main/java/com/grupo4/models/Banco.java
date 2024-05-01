@@ -18,12 +18,11 @@ public class Banco {
     private String nombreBanco;
     private String direccionBanco;
     private String telefonoBanco;
-   /* @OneToMany(fetch = FetchType.LAZY, mappedBy = "banco", cascade = CascadeType.ALL)
-    List<TarjetaDebito> tarjetas;
-    //relacion ciudad-banco*/
-   @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ciudad_id")
     private Ciudad ciudad;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "banco", cascade = CascadeType.ALL)
+    List<TarjetaDebito> tarjetas;
 
     public Banco(String nombreBanco, String direccionBanco, String telefonoBanco, Ciudad ciudad) {
         this.nombreBanco = nombreBanco;

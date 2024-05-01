@@ -4,11 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class TarjetaDebitoDto {
     private Integer id;
     private String numerotarjeta;
-    private Integer usuarioId;
+    private Date fechaVencimiento;
+    private Integer cvv;
+    private Integer claveDigital;
+    private Integer bancoId;
 }

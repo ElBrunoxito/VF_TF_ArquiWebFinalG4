@@ -22,15 +22,17 @@ public class TarjetaDebito {
     //relacion 1-1 usuario-TD
    /* @OneToOne
     @JoinColumn(name = "usuario_id")
-    Usuario usuario;
+    Usuario usuario;*/
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "banco_id",nullable = false)
+    @JoinColumn(name = "banco_id")
     private Banco banco;
 
-
-   public TarjetaDebito(String numerotarjeta, Usuario usuario) {
+    public TarjetaDebito(String numerotarjeta, Date fechaVencimiento, Integer cvv, Integer claveDigital, Banco banco) {
         this.numerotarjeta = numerotarjeta;
-        this.usuario = usuario;
-    }*/
+        this.fechaVencimiento = fechaVencimiento;
+        this.cvv = cvv;
+        this.claveDigital = claveDigital;
+        this.banco = banco;
+    }
 }
