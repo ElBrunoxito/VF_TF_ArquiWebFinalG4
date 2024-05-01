@@ -19,4 +19,7 @@ public class Pais {
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "pais",cascade = CascadeType.ALL)
     List<Ciudad> ciudad ;
 
+    public Pais(String nombrePais) {
+        this.nombrePais = nombrePais;
+    }
 }

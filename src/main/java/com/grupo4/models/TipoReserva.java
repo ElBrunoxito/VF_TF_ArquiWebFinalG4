@@ -20,5 +20,6 @@ public class TipoReserva {
     List<Reserva> reservas ;
 
     public TipoReserva(String nombre) {
+        this.nombre = nombre;
     }
 }
