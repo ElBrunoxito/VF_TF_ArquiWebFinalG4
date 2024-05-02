@@ -22,4 +22,6 @@ public class TipoReserva {
     public TipoReserva(String nombre) {
         this.nombre = nombre;
     }
+
+
 }
