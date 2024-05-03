@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,7 +25,8 @@ public class Reserva {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
     Usuario usuario;
-
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "reserva",cascade = CascadeType.ALL)
+    List<Transaccion> transacciones ;
     public Reserva(String descripcion, Date fechaCreacion, Double monto, TipoReserva tipoReserva, Usuario usuario) {
         this.descripcion = descripcion;
         this.fechaCreacion = fechaCreacion;
