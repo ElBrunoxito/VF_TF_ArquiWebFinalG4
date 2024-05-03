@@ -19,12 +19,12 @@ public class BancoController {
     public BancoController(BancoService bancoService) {
         this.bancoService = bancoService;
     }
-    @PostMapping("admin/CrearBanco")
+    @PostMapping("/admin/CrearBanco")
     public ResponseEntity<Banco> Add (@RequestBody BancoDto bancoDto) {
         return new ResponseEntity<>(bancoService.Add(bancoDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("user/ListaBanco")
+    @GetMapping("/user/ListaBanco")
     public ResponseEntity<List<BancoDto>> getAll(){
         return new ResponseEntity<>(bancoService.getAll(), HttpStatus.OK);
     }

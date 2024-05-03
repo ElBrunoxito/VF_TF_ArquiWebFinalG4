@@ -17,12 +17,12 @@ public class TarjetaDebitoController {
     public TarjetaDebitoController(TarjetaDebitoService tarjetaDebitoService) {
         this.tarjetaDebitoService = tarjetaDebitoService;
     }
-    @PostMapping("user/CrearTarjetaDebito")
+    @PostMapping("/user/CrearTarjetaDebito")
     public ResponseEntity<TarjetaDebito> Add (@RequestBody TarjetaDebitoDto TarjetaDebitoDto) {
         return new ResponseEntity<>(tarjetaDebitoService.Add(TarjetaDebitoDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("admin/ListaTarjetaDebito")
+    @GetMapping("/admin/ListaTarjetaDebito")
     public ResponseEntity<List<TarjetaDebitoDto>> getAll(){
         return new ResponseEntity<>(tarjetaDebitoService.getAll(), HttpStatus.OK);
     }
