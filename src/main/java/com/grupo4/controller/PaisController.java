@@ -19,12 +19,12 @@ public class PaisController {
         this.paisService = paisService;
     }
 
-    @PostMapping("admin/CrearPais")
+    @PostMapping("/admin/CrearPais")
     public ResponseEntity<Pais> Add (@RequestBody PaisDto paisDto) {
         return new ResponseEntity<>(paisService.Add(paisDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("user/ListaPais")
+    @GetMapping("/user/ListaPais")
     public ResponseEntity<List<PaisDto>> getAll(){
         return new ResponseEntity<>(paisService.getAll(), HttpStatus.OK);
     }

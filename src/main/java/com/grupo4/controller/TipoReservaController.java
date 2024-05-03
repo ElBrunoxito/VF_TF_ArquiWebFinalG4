@@ -19,11 +19,11 @@ public class TipoReservaController {
         this.tipoReservaService = tipoReservaService;
     }
 
-    @PostMapping("admin/Crear")
+    @PostMapping("/admin/CrearTipoReserva")
     public ResponseEntity<TipoReserva> Add (@RequestBody TipoReservaDto tipoReservaDto) {
         return new ResponseEntity<>(tipoReservaService.Add(tipoReservaDto), HttpStatus.CREATED);
     }
-    @GetMapping("user/Lista")
+    @GetMapping("/user/ListaTipoReserva")
     public ResponseEntity<List<TipoReservaDto>> getAll(){
         return new ResponseEntity<>(tipoReservaService.getAll(), HttpStatus.OK);
     }

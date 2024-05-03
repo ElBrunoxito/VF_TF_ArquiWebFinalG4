@@ -19,12 +19,12 @@ public class CiudadController {
     public CiudadController(CiudadService ciudadService) {
         this.ciudadService = ciudadService;
     }
-    @PostMapping("admin/CrearCiudad")
+    @PostMapping("/admin/CrearCiudad")
     public ResponseEntity<Ciudad> Add (@RequestBody CiudadDto ciudadDto) {
         return new ResponseEntity<>(ciudadService.Add(ciudadDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("user/ListaCiudad")
+    @GetMapping("/user/ListaCiudad")
     public ResponseEntity<List<CiudadDto>> getAll(){
         return new ResponseEntity<>(ciudadService.getAll(), HttpStatus.OK);
     }
