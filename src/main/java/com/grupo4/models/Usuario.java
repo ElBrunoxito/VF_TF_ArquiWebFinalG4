@@ -40,8 +40,12 @@ public class Usuario implements UserDetails {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ciudad_id")
     Ciudad ciudad;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "usuario",cascade = CascadeType.ALL)
+    List<Reserva> reservas ;
     @Enumerated(EnumType.STRING)
     Role role;
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));

@@ -17,8 +17,19 @@ public class Reserva {
     private Integer id;
     private String descripcion;
     private Date fechaCreacion;
-    private Double Monto;
+    private Double monto;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TipoReservaId")
+    @JoinColumn(name = "tipoReserva_id")
     TipoReserva tipoReserva;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")
+    Usuario usuario;
+
+    public Reserva(String descripcion, Date fechaCreacion, Double monto, TipoReserva tipoReserva, Usuario usuario) {
+        this.descripcion = descripcion;
+        this.fechaCreacion = fechaCreacion;
+        this.monto = monto;
+        this.tipoReserva = tipoReserva;
+        this.usuario = usuario;
+    }
 }

@@ -13,6 +13,7 @@ public class ReservaDto {
     private Integer id;
     private String descripcion;
     private Date fechaCreacion;
-    private Double Monto;
-    private Integer TipoReservaId;
+    private Double monto;
+    private Integer tipoReservaId;
+    private Integer usuarioId;
 }

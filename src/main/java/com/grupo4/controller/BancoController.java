@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Banco")
+@RequestMapping("/auth")
 public class BancoController {
     final BancoService bancoService;
 
     public BancoController(BancoService bancoService) {
         this.bancoService = bancoService;
     }
-    @PostMapping("/Crear")
+    @PostMapping("/CrearBanco")
     public ResponseEntity<Banco> Add (@RequestBody BancoDto bancoDto) {
         return new ResponseEntity<>(bancoService.Add(bancoDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("/Lista")
+    @GetMapping("/ListaBanco")
     public ResponseEntity<List<BancoDto>> getAll(){
         return new ResponseEntity<>(bancoService.getAll(), HttpStatus.OK);
     }
