@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/TipoReserva")
 public class TipoReservaController {
     final TipoReservaService tipoReservaService;
 
@@ -19,11 +19,11 @@ public class TipoReservaController {
         this.tipoReservaService = tipoReservaService;
     }
 
-    @PostMapping("/CrearTipoReserva")
+    @PostMapping("/Crear")
     public ResponseEntity<TipoReserva> Add (@RequestBody TipoReservaDto tipoReservaDto) {
         return new ResponseEntity<>(tipoReservaService.Add(tipoReservaDto), HttpStatus.CREATED);
     }
-    @GetMapping("/ListaTipoReserva")
+    @GetMapping("/Lista")
     public ResponseEntity<List<TipoReservaDto>> getAll(){
         return new ResponseEntity<>(tipoReservaService.getAll(), HttpStatus.OK);
     }
