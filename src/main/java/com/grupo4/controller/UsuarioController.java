@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/auth")
 public class UsuarioController {
 
     private final AuthService authService;
@@ -25,12 +25,12 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping("/auth/login")
+    @PostMapping("/login")
     public ResponseEntity<AuthResponse> login (@RequestBody LoginDto loginDto) {
         return ResponseEntity.ok(authService.login(loginDto));
     }
 
-    @PostMapping("/auth/register")
+    @PostMapping("/register")
     public ResponseEntity<AuthResponse> bienvenido (@RequestBody UsuarioDto usuarioDto) {
         return ResponseEntity.ok(authService.register(usuarioDto));}
 /*

@@ -20,7 +20,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
         this.ciudadRepository = ciudadRepository;
     }
-    public Usuario Add(UsuarioDto usuarioDto){
+  /*  public Usuario Add(UsuarioDto usuarioDto){
        Ciudad ciudad = new Ciudad();
        ciudad.setId(usuarioDto.getCiudadId());
        Usuario usuario = new Usuario(usuarioDto.getNombre(), usuarioDto.getApellido(),
@@ -28,7 +28,7 @@ public class UsuarioService {
                usuarioDto.getDireccionUsuario(),usuarioDto.getTelefonoUsuario(), ciudad);
         return usuarioRepository.save(usuario);
     }
-    /*
+
     public boolean autenticarUsuario(LoginDto loginDto) {
         // Buscar al usuario por nombre de usuario en la base de datos
         Usuario usuario = usuarioRepository.findByUsuario(loginDto.getUsuario());

@@ -18,11 +18,12 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="Usuario", uniqueConstraints = {@UniqueConstraint(columnNames = {"usuario"})})
+@Table( uniqueConstraints = {@UniqueConstraint(columnNames = {"usuario"})})
 public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Basic
     private String nombre;
     private String apellido;
     private String email;
@@ -53,7 +54,7 @@ public class Usuario implements UserDetails {
         this.ciudad = ciudad;
     }
 
-    public Usuario(String nombre, String apellido, String email, String usuario, String contrasena, String direccionUsuario, String telefonoUsuario, Ciudad ciudad) {
+   /* public Usuario(String nombre, String apellido, String email, String usuario, String contrasena, String direccionUsuario, String telefonoUsuario, Ciudad ciudad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -63,7 +64,7 @@ public class Usuario implements UserDetails {
         this.telefonoUsuario = telefonoUsuario;
         this.ciudad = ciudad;
     }
-
+*/
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
@@ -78,7 +79,6 @@ public class Usuario implements UserDetails {
     public String getUsername() {
         return null;
     }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;

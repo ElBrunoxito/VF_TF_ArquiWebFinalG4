@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Ciudad")
+@RequestMapping("/auth")
 public class CiudadController {
     final CiudadService ciudadService;
 

@@ -39,6 +39,7 @@ public class AuthService {
                 .email(usuarioDto.getEmail())
                 .usuario(usuarioDto.getUsuario())
                 .contrasena(passwordEncoder.encode( usuarioDto.getContrasena()))
+                .fechaRegistro(usuarioDto.getFechaRegistro())
                 .direccionUsuario(usuarioDto.getDireccionUsuario())
                 .telefonoUsuario(usuarioDto.getTelefonoUsuario())
                 .ciudad(c)

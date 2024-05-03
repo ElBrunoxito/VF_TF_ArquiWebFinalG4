@@ -17,6 +17,7 @@ public class UsuarioDto {
     private String email;
     private String usuario;
     private String contrasena;
+    private Date fechaRegistro;
     private String direccionUsuario;
     private String telefonoUsuario;
     private Integer ciudadId;
