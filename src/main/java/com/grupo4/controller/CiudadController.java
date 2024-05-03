@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Ciudad")
+@RequestMapping
 public class CiudadController {
     final CiudadService ciudadService;
 
     public CiudadController(CiudadService ciudadService) {
         this.ciudadService = ciudadService;
     }
-    @PostMapping("/Crear")
+    @PostMapping("admin/CrearCiudad")
     public ResponseEntity<Ciudad> Add (@RequestBody CiudadDto ciudadDto) {
         return new ResponseEntity<>(ciudadService.Add(ciudadDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("/Lista")
+    @GetMapping("user/ListaCiudad")
     public ResponseEntity<List<CiudadDto>> getAll(){
         return new ResponseEntity<>(ciudadService.getAll(), HttpStatus.OK);
     }
