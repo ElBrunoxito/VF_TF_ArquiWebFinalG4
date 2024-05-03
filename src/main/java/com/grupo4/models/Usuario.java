@@ -27,6 +27,7 @@ public class Usuario implements UserDetails {
     private String nombre;
     private String apellido;
     private String email;
+    @Column(nullable = false)
     private String usuario;
     private String contrasena;
     private Date fechaRegistro = new Date();
