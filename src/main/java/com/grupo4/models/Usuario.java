@@ -42,29 +42,6 @@ public class Usuario implements UserDetails {
     Ciudad ciudad;
     @Enumerated(EnumType.STRING)
     Role role;
-    public Usuario(String nombre, String apellido, String email, String usuario, String contrasena, Date fechaRegistro, String direccionUsuario, String telefonoUsuario, Ciudad ciudad) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
-        this.fechaRegistro = fechaRegistro;
-        this.direccionUsuario = direccionUsuario;
-        this.telefonoUsuario = telefonoUsuario;
-        this.ciudad = ciudad;
-    }
-
-   /* public Usuario(String nombre, String apellido, String email, String usuario, String contrasena, String direccionUsuario, String telefonoUsuario, Ciudad ciudad) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
-        this.direccionUsuario = direccionUsuario;
-        this.telefonoUsuario = telefonoUsuario;
-        this.ciudad = ciudad;
-    }
-*/
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
@@ -72,12 +49,12 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return contrasena;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return usuario;
     }
     @Override
     public boolean isAccountNonExpired() {

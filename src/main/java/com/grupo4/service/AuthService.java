@@ -24,8 +24,8 @@ public class AuthService {
 
     public AuthResponse login(LoginDto dto) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(dto.getUsuario(), dto.getContrasena()));
-        UserDetails userDetails=usuarioRepository.findByUsuario(dto.getUsuario()).orElseThrow();
-        String token=jwtService.getToken(userDetails);
+        UserDetails user=usuarioRepository.findByUsuario(dto.getUsuario()).orElseThrow();
+        String token=jwtService.getToken(user);
         return AuthResponse.builder()
                 .token(token)
                 .build();
@@ -38,7 +38,7 @@ public class AuthService {
                 .apellido(usuarioDto.getApellido())
                 .email(usuarioDto.getEmail())
                 .usuario(usuarioDto.getUsuario())
-                .contrasena(passwordEncoder.encode( usuarioDto.getContrasena()))
+                .contrasena(passwordEncoder.encode(usuarioDto.getContrasena()))
                 .fechaRegistro(usuarioDto.getFechaRegistro())
                 .direccionUsuario(usuarioDto.getDireccionUsuario())
                 .telefonoUsuario(usuarioDto.getTelefonoUsuario())
